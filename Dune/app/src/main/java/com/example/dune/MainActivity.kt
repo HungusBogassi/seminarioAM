@@ -60,7 +60,18 @@ class MainActivity : ComponentActivity() {
                     preferencias.edit().putString(resources.getString(R.string.nombre_usuario), nombreUsuario).apply()
                     preferencias.edit().putString(resources.getString(R.string.password_usuario), passwordUsuario).apply()
                 }
-                startLibrosActivity(nombreUsuario)
+                //verifica si el usuario existe
+                //si es asi, pasa a la lista de libros, sino muestra un mensaje de error
+                var bdd = AppDatabase.getDatabase(this)
+                var r: Registros
+                r = bdd.registrosDao().getUsuario(nombreUsuario, passwordUsuario)
+
+                if (r != null) {
+                    startLibrosActivity(nombreUsuario)
+                }
+                else{
+                    Toast.makeText(this, "Usuario inexistente", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

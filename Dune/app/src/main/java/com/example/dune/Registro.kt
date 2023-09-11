@@ -46,14 +46,14 @@ class Registro : ComponentActivity() {
             {
                 if(etUsuarioPass.text.toString().equals(etReingUsuarioPass.text.toString())){
 
-                    //sitodo esta bien, crea el usuario y vuelve al inicio
-                    //realizar en la ENTREGA 2
+                    // crea el usuario
+                    var nuevoUsuario = Registros(etUsuarioPass.text.toString(),etReingUsuarioPass.text.toString())
+                    AppDatabase.getDatabase(this).registrosDao().insertUsuario(nuevoUsuario)
 
                     //vuelve al inicio
                     val intentMain = Intent(this, MainActivity::class.java)
-                    intentMain.putExtra("mensaje", "Usuario creado con exito. Puede loguearse.")
+                    intentMain.putExtra("mensaje", "Usuario creado con exito. Puede loguearse ahora.")
                     startActivity(intentMain)
-                    //cierra la activity actual
                     finish()
                 } else
                 {

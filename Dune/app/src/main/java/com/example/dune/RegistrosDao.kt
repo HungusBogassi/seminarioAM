@@ -6,12 +6,12 @@ import androidx.room.Query
 
 @Dao
 interface RegistrosDao {
-    @Query("select * from Registros")//aca uso la clase como nombre de la tabla
+    @Query("select * from Registros")
     fun getAll(): List<Registros>
 
-    //una funcion que devuelve los usuarios
-
-
+    //una funcion para buscar usuario, password
+    @Query("select * from Registros where usuario = :nombre and password = :pass")
+    fun getUsuario(nombre: String, pass: String): Registros
     @Insert
-    fun insertRegistro(registro: Registros)
+    fun insertUsuario(registro: Registros)
 }
