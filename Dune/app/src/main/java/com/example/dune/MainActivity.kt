@@ -51,22 +51,22 @@ class MainActivity : ComponentActivity() {
             val passwordUsuario = etContrasenia.text.toString()
 
             if(nombreUsuario.isEmpty() || passwordUsuario.isEmpty()){
-                //mensaje+= ". Faltan Datos"
                 Toast.makeText(this, "Faltan datos", Toast.LENGTH_LONG).show()
             }else {
+                //guardo los datos para futuros logueos
                 if(cbChequeo.isChecked){
 
                     val preferencias = getSharedPreferences(resources.getString((R.string.sp_credenciales)), MODE_PRIVATE)
                     preferencias.edit().putString(resources.getString(R.string.nombre_usuario), nombreUsuario).apply()
                     preferencias.edit().putString(resources.getString(R.string.password_usuario), passwordUsuario).apply()
                 }
-                //verifica si el usuario existe
-                //si es asi, pasa a la lista de libros, sino muestra un mensaje de error
+                //verifica si el usuario existe, para eso lo busca por nombre y password en la base de datos local
                 var bdd = AppDatabase.getDatabase(this)
-                var r: Registros
-                r = bdd.registrosDao().getUsuario(nombreUsuario, passwordUsuario)
+                var reg: Registros
+                reg = bdd.registrosDao().getUsuario(nombreUsuario, passwordUsuario)
 
-                if (r != null) {
+                //si existe el usuario con el password, pasa a la lista de libros, sino muestra un mensaje de error
+                if (reg != null) {
                     startLibrosActivity(nombreUsuario)
                 }
                 else{
