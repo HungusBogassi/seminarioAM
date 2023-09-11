@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
         val usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario), "")
         val passwordGuardado = preferencias.getString(resources.getString(R.string.password_usuario), "")
 
+        //si guardamos los datos, pasa a la lista de libro de forma directa
         if(usuarioGuardado != null && passwordGuardado != ""){
             startLibrosActivity(usuarioGuardado)
         }
@@ -51,7 +52,7 @@ class MainActivity : ComponentActivity() {
             val passwordUsuario = etContrasenia.text.toString()
 
             if(nombreUsuario.isEmpty() || passwordUsuario.isEmpty()){
-                Toast.makeText(this, "Faltan datos", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Faltan datos", Toast.LENGTH_SHORT).show()
             }else {
                 //guardo los datos para futuros logueos
                 if(cbChequeo.isChecked){
@@ -60,17 +61,18 @@ class MainActivity : ComponentActivity() {
                     preferencias.edit().putString(resources.getString(R.string.nombre_usuario), nombreUsuario).apply()
                     preferencias.edit().putString(resources.getString(R.string.password_usuario), passwordUsuario).apply()
                 }
-                //verifica si el usuario existe, para eso lo busca por nombre y password en la base de datos local
+                //verifico si el usuario existe, para eso lo busca por nombre y password en la base de datos
+
                 var bdd = AppDatabase.getDatabase(this)
                 var reg: Registros
-                reg = bdd.registrosDao().getUsuario(nombreUsuario, passwordUsuario)
+                reg = bdd.registrosDao().getUsuario(nombreUsuario, passwordUsuario)//tomo un registro por usuario y password
 
                 //si existe el usuario con el password, pasa a la lista de libros, sino muestra un mensaje de error
                 if (reg != null) {
                     startLibrosActivity(nombreUsuario)
                 }
                 else{
-                    Toast.makeText(this, "Usuario inexistente", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Usuario inexistente", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -93,9 +95,8 @@ class MainActivity : ComponentActivity() {
         val intentMain = Intent(this, ListaLibros::class.java)
         // Agregamos datos que queremos pasar a la proxima pantalla
         intentMain.putExtra(resources.getString(R.string.nombre_usuario), usuarioGuardado)
-        // Cambiamos de pantalla
+        // Cambiamos de pantalla y cerramos la anterior
         startActivity(intentMain)
-        // Eliminamos la Activity actual para sacarla de la Pila
         finish()
     }
 

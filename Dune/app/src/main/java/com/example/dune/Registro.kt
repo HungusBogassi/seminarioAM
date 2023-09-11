@@ -40,24 +40,34 @@ class Registro : ComponentActivity() {
             //control de que no haya datos imcompletos
             if(etUsuario.text.toString().isEmpty() || etUsuarioPass.text.toString().isEmpty() || etReingUsuarioPass.text.toString().isEmpty()){
 
-                Toast.makeText(this, "Faltan Datos", Toast.LENGTH_LONG).show()
-
+                Toast.makeText(this, "Faltan Datos", Toast.LENGTH_SHORT).show()
             }else
             {
                 if(etUsuarioPass.text.toString().equals(etReingUsuarioPass.text.toString())){
 
-                    // crea el usuario
-                    var nuevoUsuario = Registros(etUsuarioPass.text.toString(),etReingUsuarioPass.text.toString())
-                    AppDatabase.getDatabase(this).registrosDao().insertUsuario(nuevoUsuario)
+                    var bdd = AppDatabase.getDatabase(this) //la base de datos
+                    var registroUsuario: Registros
+                    registroUsuario = bdd.registrosDao().getRegistro(etUsuario.text.toString()) //registro completo dado por el nombre del usuario
 
-                    //vuelve al inicio
-                    val intentMain = Intent(this, MainActivity::class.java)
-                    intentMain.putExtra("mensaje", "Usuario creado con exito. Puede loguearse ahora.")
-                    startActivity(intentMain)
-                    finish()
+                    //
+                    if (registroUsuario != null) {
+                        Toast.makeText(this, "Usuario Existente", Toast.LENGTH_SHORT).show()
+                    }
+                    else{
+                        //no existe el usuario, entonces lo crea y lo guarda
+                        var nuevoUsuario = Registros(etUsuario.text.toString(),etUsuarioPass.text.toString())
+                        AppDatabase.getDatabase(this).registrosDao().insertUsuario(nuevoUsuario)//agrega el nuevo usuario
+
+                        //vuelve al inicio
+                        val intentMain = Intent(this, MainActivity::class.java)
+                        intentMain.putExtra("mensaje", "Usuario creado con exito. Puede loguearse ahora.")
+                        startActivity(intentMain)
+                        finish()
+                    }
+
                 } else
                 {
-                    Toast.makeText(this, "Error. Las contraseñas no son iguales", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Error. Las contraseñas no son iguales", Toast.LENGTH_SHORT).show()
                 }
 
             }
