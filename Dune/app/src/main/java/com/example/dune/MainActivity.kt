@@ -88,7 +88,7 @@ class MainActivity : ComponentActivity() {
         finish()
     }
 
-    override fun onCreateOptionsMenu(menu:  Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_en_activity, menu)
         return super.onCreateOptionsMenu(menu)
     }
