@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.CheckBox
 import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 
 class MainActivity : ComponentActivity() {
@@ -84,6 +86,19 @@ class MainActivity : ComponentActivity() {
         startActivity(intentMain)
         // Eliminamos la Activity actual para sacarla de la Pila
         finish()
+    }
+
+    override fun onCreateOptionsMenu(menu:  Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_en_activity, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.guardar ->Toast.makeText(this, "Boton Guardar", Toast.LENGTH_SHORT).show()
+            R.id.compartir ->Toast.makeText(this, "Boton Compartir", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

@@ -10,6 +10,8 @@ interface RegistrosDao {
     fun getAll(): List<Registros>
 
     //una funcion que devuelve los usuarios
+
+
     @Insert
     fun insertRegistro(registro: Registros)
 }
