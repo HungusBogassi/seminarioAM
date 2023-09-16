@@ -28,8 +28,8 @@ class ListaLibros : ComponentActivity(), OnLibrosListener  {
                 startActivity(libro01)
             }
             1 -> Toast.makeText(this, "Libro: El Mesias de Dune ", Toast.LENGTH_SHORT).show()
-            2 -> Toast.makeText(this, "Libro: Hujos de Dune ", Toast.LENGTH_SHORT).show()
-            3 -> Toast.makeText(this, "Libro: dios emperador de Dune ", Toast.LENGTH_SHORT).show()
+            2 -> Toast.makeText(this, "Libro: Hijos de Dune ", Toast.LENGTH_SHORT).show()
+            3 -> Toast.makeText(this, "Libro: Dios Emperador de Dune ", Toast.LENGTH_SHORT).show()
             4 -> Toast.makeText(this, "Libro: Herejes de Dune ", Toast.LENGTH_SHORT).show()
             5 -> Toast.makeText(this, "Libro: Casa Capitular Dune ", Toast.LENGTH_SHORT).show()
         }
