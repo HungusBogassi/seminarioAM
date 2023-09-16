@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CustomAdapter(private val onLibrosListener: OnLibrosListener): RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
 
-    var titulos = arrayOf("Dune","EL Mesias de Dune", "Hijos de Dune", "Dios Emperador de Dune", "Herejes de Dune", "Casa Capitular Dune")
-    var autores = arrayOf("Frank Herbert", "Frank Herbert", "Frank Herbert", "Frank Herbert", "Frank Herbert", "Frank Herbert")
-    var imagenes = intArrayOf(R.drawable.libro01, R.drawable.libro02,R.drawable.libro03,R.drawable.libro04,R.drawable.libro05,R.drawable.libro06)
+    private var titulos = arrayOf("Dune","EL Mesias de Dune", "Hijos de Dune", "Dios Emperador de Dune", "Herejes de Dune", "Casa Capitular Dune")
+    private var autores = arrayOf("Frank Herbert", "Frank Herbert", "Frank Herbert", "Frank Herbert", "Frank Herbert", "Frank Herbert")
+    private var imagenes = intArrayOf(R.drawable.libro01, R.drawable.libro02,R.drawable.libro03,R.drawable.libro04,R.drawable.libro05,R.drawable.libro06)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
-        var v = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout,viewGroup, false)
+        val v = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_layout,viewGroup, false)
         return ViewHolder(v)
     }
 

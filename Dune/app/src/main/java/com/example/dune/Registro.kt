@@ -2,22 +2,9 @@ package com.example.dune
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.dune.ui.theme.DuneTheme
-
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.CheckBox
 import android.content.Intent
-import android.view.View
 import android.widget.Toast
 
 class Registro : ComponentActivity() {
@@ -49,7 +36,6 @@ class Registro : ComponentActivity() {
                     var registroUsuario: Registros
                     registroUsuario = bdd.registrosDao().getRegistro(etUsuario.text.toString()) //registro completo dado por el nombre del usuario
 
-                    //
                     if (registroUsuario != null) {
                         Toast.makeText(this, "Usuario Existente", Toast.LENGTH_SHORT).show()
                     }
