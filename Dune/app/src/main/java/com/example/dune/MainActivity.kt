@@ -1,14 +1,21 @@
 package com.example.dune
 
+import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import android.widget.Button
 import android.widget.EditText
 import android.widget.CheckBox
 import android.content.Intent
+import android.os.Build
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 
 class MainActivity : ComponentActivity() {
 
@@ -18,6 +25,12 @@ class MainActivity : ComponentActivity() {
     lateinit var etContrasenia: EditText
     lateinit var cbChequeo: CheckBox
 
+    lateinit var cbTest: CheckBox
+
+    val channelId = "test"
+    val channelName = "test"
+
+    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
@@ -76,7 +89,42 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        //ENTREGA 3 Notificacion
+        //------------------------------------------
+
+        //cbTest = findViewById(R.id.chequeo)
+
+        // Perform action when the checkbox is checked
+        //Toast.makeText(this, "Test Ok....", Toast.LENGTH_SHORT).show()
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            val importancia = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(channelId, channelName,importancia)
+
+            //manager de notificaciones
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            manager.createNotificationChannel(channel)
+
+            cbChequeo.setOnClickListener { view ->
+                if ((view as CheckBox).isChecked) {
+                    //configurando notificacion
+                    val notificacion = NotificationCompat.Builder(this, channelId).also {
+                        it.setContentTitle("AVISO AL USUARIO")
+                        it.setContentText("El usuario y password ingresado se almacenaran para un futuro ingreso directo")
+                        it.setSmallIcon(R.drawable.ic_mensage)
+                    }.build()
+
+                    //mostrar la notificacion
+                    val notificationManager = NotificationManagerCompat.from(applicationContext)
+                    notificationManager.notify(1, notificacion)
+                }
+            }
+        }
+        //-------------------------------------------
     }
+
 
     private fun registroExitoso() {
         // Obtengo los datos que me mandaron
@@ -86,6 +134,7 @@ class MainActivity : ComponentActivity() {
             // Obtengo el dato especifico
             val mensaje = bundle?.getString("mensaje")
             // Muestro el mensaje
+            //Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
         }
     }
@@ -97,6 +146,7 @@ class MainActivity : ComponentActivity() {
         intentMain.putExtra(resources.getString(R.string.nombre_usuario), usuarioGuardado)
         // Cambiamos de pantalla y cerramos la anterior
         startActivity(intentMain)
+        //startActivity(intentMain)
         finish()
     }
 
