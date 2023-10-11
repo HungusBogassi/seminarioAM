@@ -63,8 +63,8 @@ class MainActivity : ComponentActivity() {
                 }
                 //verifico si el usuario existe, para eso lo busca por nombre y password en la base de datos
 
-                var bdd = AppDatabase.getDatabase(this)
-                var reg: Registros
+                val bdd = AppDatabase.getDatabase(this)
+                val reg: Registros
                 reg = bdd.registrosDao().getUsuario(nombreUsuario, passwordUsuario)//tomo un registro por usuario y password
 
                 //si existe el usuario con el password, pasa a la lista de libros, sino muestra un mensaje de error
