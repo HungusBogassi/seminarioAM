@@ -25,8 +25,6 @@ class MainActivity : ComponentActivity() {
     lateinit var etContrasenia: EditText
     lateinit var cbChequeo: CheckBox
 
-    lateinit var cbTest: CheckBox
-
     val channelId = "test"
     val channelName = "test"
 
@@ -90,13 +88,8 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        //ENTREGA 3 Notificacion
         //------------------------------------------
-
-        //cbTest = findViewById(R.id.chequeo)
-
-        // Perform action when the checkbox is checked
-        //Toast.makeText(this, "Test Ok....", Toast.LENGTH_SHORT).show()
+        //ENTREGA 3 Notificacion
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
