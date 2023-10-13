@@ -39,9 +39,11 @@ class MainActivity : ComponentActivity() {
         etContrasenia = findViewById(R.id.contraseña)
         cbChequeo = findViewById(R.id.chequeo)
 
+        //------------------------------------------
         val preferencias = getSharedPreferences(resources.getString((R.string.sp_credenciales)), MODE_PRIVATE)
         val usuarioGuardado = preferencias.getString(resources.getString(R.string.nombre_usuario), "")
-        val passwordGuardado = preferencias.getString(resources.getString(R.string.password_usuario), "")
+        val passwordGuardado = preferencias.getString("PASSWORD", "")
+        //------------------------------------------
 
         //si guardamos los datos, pasa a la lista de libro de forma directa
         if(usuarioGuardado != null && passwordGuardado != ""){
@@ -68,9 +70,12 @@ class MainActivity : ComponentActivity() {
                 //guardo los datos para futuros logueos
                 if(cbChequeo.isChecked){
 
-                    val preferencias = getSharedPreferences(resources.getString((R.string.sp_credenciales)), MODE_PRIVATE)
-                    preferencias.edit().putString(resources.getString(R.string.nombre_usuario), nombreUsuario).apply()
-                    preferencias.edit().putString(resources.getString(R.string.password_usuario), passwordUsuario).apply()
+                    //------------------------------------------
+                    //ENTREGA 3 - accedemos a las shared preferences con un hilo
+
+                    guardarDatos(nombreUsuario, passwordUsuario)
+
+                    //------------------------------------------
                 }
                 //verifico si el usuario existe, para eso lo busca por nombre y password en la base de datos
 
@@ -127,10 +132,23 @@ class MainActivity : ComponentActivity() {
             // Obtengo el dato especifico
             val mensaje = bundle?.getString("mensaje")
             // Muestro el mensaje
-            //Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
             Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
         }
     }
+
+    //-------------------------------------------
+    //guardar datos a traves de un hilo
+    private fun guardarDatos(usuario: String, password: String){
+
+        var thread = Thread(Runnable {
+            val preferencias = getSharedPreferences(resources.getString((R.string.sp_credenciales)), MODE_PRIVATE)
+            preferencias.edit().putString("NOMBRE", usuario).apply()
+            preferencias.edit().putString("PASSWORD", password).apply()
+        })
+
+        thread.start()
+    }
+    //-------------------------------------------
 
     private fun startLibrosActivity(usuarioGuardado: String) {
         // Indicamos a que pantalla queremos ir

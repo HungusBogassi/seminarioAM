@@ -18,14 +18,19 @@ class Citas : ComponentActivity() {
         setContentView(R.layout.activity_citas)
 
         //--------------------------------------------------
+        //PRE- RecyclerView para la citas
         val recyclerView = findViewById<RecyclerView>(R.id.citaRecyclerView)
 
+        //--------------------------------------------------
+        //DURANTE- busco las citas en la API Rest
         val api = RetrofitClient.retrofit.create(MyApi::class.java)
         val callGetPost = api.getCitas()
         callGetPost.enqueue(object : retrofit2.Callback<List<Cita>> {
             override fun onResponse(call: Call<List<Cita>>, response: Response<List<Cita>>) {
                 val citas = response.body()
                 if (citas != null){
+
+                    //completo el RecyclerView
                     recyclerView.apply {
                         layoutManager = LinearLayoutManager(this@Citas)
                         adapter = CitaAdapter(citas)
@@ -33,9 +38,13 @@ class Citas : ComponentActivity() {
                 }
             }
             override fun onFailure(call: Call<List<Cita>>, t: Throwable) {
-                Toast.makeText(this@Citas, "FALLO", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Citas, "FALLO LA BUSQUEDA DE LA API REST", Toast.LENGTH_SHORT).show()
             }
         })
+
+        //--------------------------------------------------
+        //POST-
+
         //--------------------------------------------------
         btnVolver = findViewById(R.id.btVolverLibros)
         btnVolver.setOnClickListener {
