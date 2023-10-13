@@ -1,6 +1,8 @@
 package com.example.dune
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +11,8 @@ import retrofit2.Call
 import retrofit2.Response
 
 class Citas : ComponentActivity() {
+
+    lateinit var btnVolver: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_citas)
@@ -32,6 +36,14 @@ class Citas : ComponentActivity() {
                 Toast.makeText(this@Citas, "FALLO", Toast.LENGTH_SHORT).show()
             }
         })
+        //--------------------------------------------------
+        btnVolver = findViewById(R.id.btVolverLibros)
+        btnVolver.setOnClickListener {
+            //regresa a la lista de libros
+            val intentLibros = Intent(this, ListaLibros::class.java)
+            startActivity(intentLibros)
+            finish()
+        }
         //--------------------------------------------------
     }
 }

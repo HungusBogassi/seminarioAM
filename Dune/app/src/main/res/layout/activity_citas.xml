@@ -7,7 +7,7 @@
     android:paddingLeft="20dp"
     android:paddingTop="20dp"
     android:paddingRight="20dp"
-    android:paddingBottom="5dp"
+    android:paddingBottom="10dp"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
@@ -17,13 +17,13 @@
         android:layout_height="650dp" />
 
     <Button
-        android:id="@+id/volver"
+        android:id="@+id/btVolverLibros"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:text="@string/volver"
         android:textStyle="bold"
-        android:textSize="14sp"
-        android:text="Volver"/>
+        android:textSize="14sp"/>
 
 </LinearLayout>
