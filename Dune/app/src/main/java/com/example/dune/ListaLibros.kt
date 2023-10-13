@@ -34,9 +34,9 @@ class ListaLibros : ComponentActivity(), OnLibrosListener  {
             4 -> Toast.makeText(this, "Libro: Herejes de Dune ", Toast.LENGTH_SHORT).show()
             5 -> Toast.makeText(this, "Libro: Casa Capitular Dune ", Toast.LENGTH_SHORT).show()
             6 -> {
-                //val citasElegidas = Intent(this, CitasElegidas::class.java)
-                //startActivity(citasElegidas)
-                Toast.makeText(this, "Citas de los libros", Toast.LENGTH_SHORT).show()
+                val citasElegidas = Intent(this, Citas::class.java)
+                startActivity(citasElegidas)
+                //Toast.makeText(this, "Citas de los libros", Toast.LENGTH_SHORT).show()
             }
         }
     }
