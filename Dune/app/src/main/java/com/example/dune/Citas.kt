@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Response
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class Citas : ComponentActivity() {
 
@@ -18,34 +21,39 @@ class Citas : ComponentActivity() {
         setContentView(R.layout.activity_citas)
 
         //--------------------------------------------------
-        //PRE- RecyclerView para la citas
+        //ENTREGA 3: utilizar una API Rest en un RecyclerView
+
         val recyclerView = findViewById<RecyclerView>(R.id.citaRecyclerView)
-
-        //--------------------------------------------------
-        //DURANTE- busco las citas en la API Rest
         val api = RetrofitClient.retrofit.create(MyApi::class.java)
-        val callGetPost = api.getCitas()
-        callGetPost.enqueue(object : retrofit2.Callback<List<Cita>> {
-            override fun onResponse(call: Call<List<Cita>>, response: Response<List<Cita>>) {
-                val citas = response.body()
-                if (citas != null){
 
-                    //completo el RecyclerView
-                    recyclerView.apply {
-                        layoutManager = LinearLayoutManager(this@Citas)
-                        adapter = CitaAdapter(citas)
+        //Utilizamos una Corrutina para obtener los datos a mostrar
+        CoroutineScope(Dispatchers.IO).launch {
+            val callGetPost = api.getCitas()
+            callGetPost.enqueue(object : retrofit2.Callback<List<Cita>> {
+                override fun onResponse(call: Call<List<Cita>>, response: Response<List<Cita>>) {
+                    val citas = response.body()
+                    //al hilo principal envia los datos para mostrarlos en el RecyclerView
+                    runOnUiThread(){
+                        if (citas != null){
+                            //cargo los datos en el RecyclerView
+                            recyclerView.apply {
+                                layoutManager = LinearLayoutManager(this@Citas)
+                                adapter = CitaAdapter(citas)
+                            }
+                        }else{
+                            Toast.makeText(this@Citas, "Ocurrio un error", Toast.LENGTH_SHORT).show()
+                        }
                     }
+                    //fin hilo principal
                 }
-            }
-            override fun onFailure(call: Call<List<Cita>>, t: Throwable) {
-                Toast.makeText(this@Citas, "FALLO LA BUSQUEDA DE LA API REST", Toast.LENGTH_SHORT).show()
-            }
-        })
-
+                override fun onFailure(call: Call<List<Cita>>, t: Throwable) {
+                    Toast.makeText(this@Citas, "FALLO LA BUSQUEDA DE LA API REST", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
         //--------------------------------------------------
-        //POST-
 
-        //--------------------------------------------------
+        //Button para volver a la lista de libros
         btnVolver = findViewById(R.id.btVolverLibros)
         btnVolver.setOnClickListener {
             //regresa a la lista de libros

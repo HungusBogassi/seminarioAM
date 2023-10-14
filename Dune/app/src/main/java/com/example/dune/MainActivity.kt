@@ -145,7 +145,6 @@ class MainActivity : ComponentActivity() {
             preferencias.edit().putString("NOMBRE", usuario).apply()
             preferencias.edit().putString("PASSWORD", password).apply()
         })
-
         thread.start()
     }
     //-------------------------------------------
