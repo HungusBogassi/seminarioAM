@@ -140,7 +140,7 @@ class MainActivity : ComponentActivity() {
     //guardar datos a traves de un hilo
     private fun guardarDatos(usuario: String, password: String){
 
-        var thread = Thread(Runnable {
+        val thread = Thread(Runnable {
             val preferencias = getSharedPreferences(resources.getString((R.string.sp_credenciales)), MODE_PRIVATE)
             preferencias.edit().putString("NOMBRE", usuario).apply()
             preferencias.edit().putString("PASSWORD", password).apply()
