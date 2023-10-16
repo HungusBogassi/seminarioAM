@@ -2,7 +2,6 @@ package com.example.dune
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,12 +27,31 @@ class ListaLibros : ComponentActivity(), OnLibrosListener  {
                 val libro01 = Intent(this, Libro01::class.java)
                 startActivity(libro01)
             }
-
-            1 -> Toast.makeText(this, "Libro: El Mesias de Dune ", Toast.LENGTH_SHORT).show()
-            2 -> Toast.makeText(this, "Libro: Hijos de Dune ", Toast.LENGTH_SHORT).show()
-            3 -> Toast.makeText(this, "Libro: Dios Emperador de Dune ", Toast.LENGTH_SHORT).show()
-            4 -> Toast.makeText(this, "Libro: Herejes de Dune ", Toast.LENGTH_SHORT).show()
-            5 -> Toast.makeText(this, "Libro: Casa Capitular Dune ", Toast.LENGTH_SHORT).show()
+            1 -> {
+                //a la reseña del libro 02
+                val libro02 = Intent(this, Libro02::class.java)
+                startActivity(libro02)
+            }
+            2 -> {
+                //a la reseña del libro 03
+                val libro03 = Intent(this, Libro03::class.java)
+                startActivity(libro03)
+            }
+            3 -> {
+                //a la reseña del libro 04
+                val libro04 = Intent(this, Libro04::class.java)
+                startActivity(libro04)
+            }
+            4 ->{
+                //a la reseña del libro 05
+                val libro05 = Intent(this, Libro05::class.java)
+                startActivity(libro05)
+            }
+            5 -> {
+                //a la reseña del libro 06
+                val libro06 = Intent(this, Libro06::class.java)
+                startActivity(libro06)
+            }
             6 -> {
                 // a la activity Citas
                 val citasElegidas = Intent(this, Citas::class.java)

@@ -17,11 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#FFA000"
+        android:background="#1BA153"
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="@string/libro_01"/>
+        android:text="@string/libro_04"/>
 
     <ScrollView
         android:id="@+id/svInfo"
@@ -39,7 +39,7 @@
                 android:layout_height="310dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/libro01" />
+                android:src="@drawable/libro04" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="En el desértico planeta Arrakis, el agua es el bien más preciado y llorar a los muertos, el símbolo de máxima prodigalidad. Pero algo hace de Arrakis una pieza estratégica para los intereses del Emperador, las Grandes Casas y la Cofradía, los tres grandes poderes de la galaxia. Arrakis es el único origen conocido de la melange, preciosa especia y uno de los bienes más codiciados del universo. Al duque Leto Atreides se le asigna el gobierno de este mundo inhóspito, habitado por los indómitos Fremen y monstruosos gusanos de arena de centenares de metros de longitud. Sin embargo, cuando la familia es traicionada, su hijo y heredero, Paul, emprenderá un viaje hacia un destino más grande del que jamás hubiese podido soñar."
+                android:text=" la trama se sitúa miles de años después de los eventos de las primeras tres novelas. Leto Atreides II se ha convertido en el Dios Emperador, un ser con poderes inmortales. La historia se centra en su reinado despótico y en su intento de preservar el futuro de la humanidad. La especia melange, que otorga habilidades mentales y prolonga la vida, sigue siendo central en la trama, mientras que nuevos personajes, como el joven Dama Siona y el ghola Duncan Idaho, también juegan roles fundamentales. La novela explora temas de inmortalidad, presciencia, política y la interacción entre los personajes en este futuro distópico."
                 android:textSize="16sp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="@string/paul_atreides"
+                android:text="Leto Atreides II"
                 android:textStyle="bold" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Paul es hijo de Leto Atreides, duque de Caladan y de la Dama Jessica, concubina del duque. Luego del escape de sus enemigos Harkonnen, tomo el nombre de Muad'ib junto a la tibu Fremen  Paul Atreides, también conocido como Muad'Dib, Usul y El Profeta (10175 AG- 10219 AG). Nació en el planeta Caladan, como hijo del duque Leto Atreides I y su concubina, Bene Gesserit, Jessica Atreides. También era el hermano mayor de Alia Atreides.  Paul se casó con una Bene Gesserit, Irulan Corrino, que entrenó y no tuvo un heredero de ella. Con su concubina Fremen, Chani Kynes, fue el padre de los gemelos Ghanima y Leto Atreides II, el Dios Emperador.  Fue el último Duque de la Casa Atreides, líder de los Fremen y primer gobernante del Imperio Atreides, Paul fue considerado el Kwisatz Haderach: el poderoso ser profético, buscado durante mucho tiempo por el Bene Gesserit y producto de su prolongado programa genético."
+                android:text="Leto Atreides, convertido en el Dios Emperador, es el personaje principal de la novela. Él es una figura compleja y enigmática que ha asumido una forma monstruosa en su búsqueda por guiar la evolución de la humanidad. Su reinado despiadado y su visión a largo plazo lo convierten en un líder inusual y trascendental. Su lucha por equilibrar el poder, la presciencia y su propio destino inmortal es un tema central de la obra."
                 android:textSize="14sp" />
 
             <TextView
@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="@string/dama_jessica"
+                android:text="Dama Siona Atreides"
                 android:textStyle="bold" />
 
             <TextView
@@ -96,14 +96,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Jessica de los Atreides (10154 AG-10256 AG) fue la concubina oficial del duque Leto Atreides I , y la madre de su hijo y amante, el emperador Paul Atreides . También era una Reverenda Madre de la Hermandad Bene Gesserit." />
+                android:text="Es una de las protagonistas principales de Dios Emperador de Dune. Como descendiente de la familia Atreides, Siona posee una característica única: es inmune a la presciencia de Leto II, lo que la convierte en una pieza clave para desafiar su gobierno. Su papel en la novela se centra en su lucha por liberar a la humanidad de la opresión de Leto II." />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="@string/leto_atreides"
+                android:text="Ghola duncan Idaho"
                 android:textStyle="bold" />
 
             <TextView
@@ -111,11 +111,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Leto Atreides era un hombre alto con piel aceitunada y cabello negro. Tenía una cara estrecha llena de ángulos y planos, con una nariz de puente alto que le daba el aspecto de un halcón y humo de leña en sus ojos grises." />
+                android:text="Idaho luego reapareció como una serie de gholas cuando Leto II gobernó como un híbrido humano-gusano de arena durante aproximadamente 3,500 años. Después de la muerte de cada ghola, Leto lo reemplazaría por uno nuevo. Por lo tanto, Leto continuamente tenía un ghola de Idaho para servirlo como Maestro de la Espada en todo momento y como líder de los Oradores de Peces. Para Leto, Idaho representaba la lealtad, la humanidad y el espíritu de lo desconocido, algo de lo que el Emperador Dios, que tenía una perfecta presciencia y recuerdos de todos sus antepasados, no sabía nada (Leto también implicaba que Duncan era necesario para que el Camino Dorado llegara a él). fruición). Los recuerdos del ego de Leto I y Paul dentro de Leto II amaban a Duncan, que era otra razón por la cual el Dios Emperador disfrutaba de la presencia de Duncan." />
 
 
         </LinearLayout>
     </ScrollView>
+
 
     <Button
         android:id="@+id/volver"
@@ -126,6 +127,5 @@
         android:height="50dp"
         android:text="@string/volver"
         android:textStyle="bold" />
-
 
 </LinearLayout>

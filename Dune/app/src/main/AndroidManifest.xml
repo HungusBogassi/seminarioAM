@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Libro06"
+            android:exported="false" />
+        <activity
+            android:name=".Libro05"
+            android:exported="false" />
+        <activity
+            android:name=".Libro04"
+            android:exported="false" />
+        <activity
+            android:name=".Libro03"
+            android:exported="false" />
+        <activity
+            android:name=".Libro02"
+            android:exported="false" />
+        <activity
             android:name=".Citas"
             android:exported="false" />
         <activity

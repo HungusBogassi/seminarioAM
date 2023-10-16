@@ -17,11 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#FFA000"
+        android:background="#5F9298"
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="@string/libro_01"/>
+        android:text="@string/libro_06"/>
 
     <ScrollView
         android:id="@+id/svInfo"
@@ -39,7 +39,7 @@
                 android:layout_height="310dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/libro01" />
+                android:src="@drawable/libro06" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="En el desértico planeta Arrakis, el agua es el bien más preciado y llorar a los muertos, el símbolo de máxima prodigalidad. Pero algo hace de Arrakis una pieza estratégica para los intereses del Emperador, las Grandes Casas y la Cofradía, los tres grandes poderes de la galaxia. Arrakis es el único origen conocido de la melange, preciosa especia y uno de los bienes más codiciados del universo. Al duque Leto Atreides se le asigna el gobierno de este mundo inhóspito, habitado por los indómitos Fremen y monstruosos gusanos de arena de centenares de metros de longitud. Sin embargo, cuando la familia es traicionada, su hijo y heredero, Paul, emprenderá un viaje hacia un destino más grande del que jamás hubiese podido soñar."
+                android:text="Casa Capitular Dune es el sexto y último libro de la serie Dune escrita por Frank Herbert. La novela continúa explorando el vasto y complejo universo creado por Herbert, lleno de intrigas políticas, religión y poder. En esta entrega, la Hermandad Bene Gesserit lucha por sobrevivir mientras se enfrenta a nuevas amenazas y desafíos. La Hermandad intenta asegurar la supervivencia de su linaje genético y sus conocimientos ancestrales, lo que desencadena una serie de eventos que alterarán el destino de la humanidad en Dune y más allá. La novela se sumerge en cuestiones de identidad, evolución y el choque de culturas en un mundo que evoluciona constantemente. Casa Capitular Dune es una culminación apasionante de la serie y ofrece un cierre satisfactorio a muchas de las tramas y personajes introducidos a lo largo de la saga."
                 android:textSize="16sp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="@string/paul_atreides"
+                android:text="Darwi Odrade"
                 android:textStyle="bold" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Paul es hijo de Leto Atreides, duque de Caladan y de la Dama Jessica, concubina del duque. Luego del escape de sus enemigos Harkonnen, tomo el nombre de Muad'ib junto a la tibu Fremen  Paul Atreides, también conocido como Muad'Dib, Usul y El Profeta (10175 AG- 10219 AG). Nació en el planeta Caladan, como hijo del duque Leto Atreides I y su concubina, Bene Gesserit, Jessica Atreides. También era el hermano mayor de Alia Atreides.  Paul se casó con una Bene Gesserit, Irulan Corrino, que entrenó y no tuvo un heredero de ella. Con su concubina Fremen, Chani Kynes, fue el padre de los gemelos Ghanima y Leto Atreides II, el Dios Emperador.  Fue el último Duque de la Casa Atreides, líder de los Fremen y primer gobernante del Imperio Atreides, Paul fue considerado el Kwisatz Haderach: el poderoso ser profético, buscado durante mucho tiempo por el Bene Gesserit y producto de su prolongado programa genético."
+                android:text="Darwi Odrade es una Reverenda Madre y la líder de la Hermandad Bene Gesserit en Casa Capitular Dune. Como una de las figuras más influyentes en la Hermandad, Odrade se enfrenta a la difícil tarea de garantizar la supervivencia y el propósito de la Hermandad en un mundo que cambia rápidamente. Su papel es fundamental en la trama de la novela, y su personaje es conocido por su inteligencia, determinación y habilidades Bene Gesserit."
                 android:textSize="14sp" />
 
             <TextView
@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="@string/dama_jessica"
+                android:text="Sheeana Brugh"
                 android:textStyle="bold" />
 
             <TextView
@@ -96,26 +96,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Jessica de los Atreides (10154 AG-10256 AG) fue la concubina oficial del duque Leto Atreides I , y la madre de su hijo y amante, el emperador Paul Atreides . También era una Reverenda Madre de la Hermandad Bene Gesserit." />
+                android:text=" Sheeana Brugh es una joven con habilidades especiales, incluida la capacidad de comunicarse con los temidos gusanos de arena de Dune. Su existencia y habilidades despiertan el interés y las ambiciones de varios grupos en el universo de Dune. Sheeana juega un papel central en la historia, y su personaje representa un enigma que influirá en el destino de Dune y la Hermandad Bene Gesserit. Estos dos personajes desempeñan roles esenciales en Casa Capitular Dune, contribuyendo al desarrollo de la trama y aportando profundidad a la narrativa. La novela se centra en sus interacciones y decisiones mientras enfrentan desafíos y amenazas en un universo en constante cambio." />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="@string/leto_atreides"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Leto Atreides era un hombre alto con piel aceitunada y cabello negro. Tenía una cara estrecha llena de ángulos y planos, con una nariz de puente alto que le daba el aspecto de un halcón y humo de leña en sus ojos grises." />
 
 
         </LinearLayout>
     </ScrollView>
+
 
     <Button
         android:id="@+id/volver"
@@ -123,9 +111,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_marginTop="17dp"
-        android:height="50dp"
         android:text="@string/volver"
         android:textStyle="bold" />
-
 
 </LinearLayout>
